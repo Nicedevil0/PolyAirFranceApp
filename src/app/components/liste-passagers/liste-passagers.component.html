@@ -1,0 +1,9 @@
+<!-- Affichage de la liste des passagers -->
+<h1 *ngIf="!passagers?.length" style="text-align: center; line-height: 300px;">Aucun passager à afficher</h1>
+<mat-slide-toggle *ngIf="passagers?.length" class="example-margin" (change)="onChangeToggle()" [checked]="toggleChecked" style="margin: 20px;">
+    Afficher les photos
+</mat-slide-toggle>
+<div *ngIf="passagers?.length">
+    <app-passager *ngFor="let passager of passagers" [passager]="passager" [dispPhoto]="toggleChecked"></app-passager>
+</div>
+

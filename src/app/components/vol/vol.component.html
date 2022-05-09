@@ -1,0 +1,19 @@
+<!-- Affichage d'un vol -->
+<div style="display:flex; justify-content: space-around; margin-top: 20px;">
+    <div>
+        <mat-icon *ngIf="type == 'décollages'">flight_takeoff</mat-icon>
+        <mat-icon *ngIf="type == 'atterrissages'">flight_land</mat-icon>
+    </div>
+    <div>
+        {{ vol?.icao }}
+    </div>
+    <div>
+        {{ vol?.matricule| uppercase }}
+    </div>
+    <div>
+        {{ vol?.aeroportDepart ?? "Inconnu" }} ➔ {{ vol?.aeroportArrivee ?? "Inconnu" }}
+    </div>
+    <div>
+        <img src="assets/{{ vol?.compagnie }}.png" width="100px">
+    </div>
+</div>

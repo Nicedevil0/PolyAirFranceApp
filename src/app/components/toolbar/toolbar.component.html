@@ -1,0 +1,16 @@
+<mat-toolbar>
+  <div class="logo">
+    <img src="../../../assets/Air France.png" alt="Logo AirFrance" />
+  </div>
+  <div>
+    <h1 style="font-size: 30px; font-weight:bold;">{{ type }}</h1>
+  </div>
+  <div class="menu" style="display:flex; justify-content: space-around; width: 250px;">
+    <button id="decollageButton" mat-raised-button (click)="toDecollages()" [ngClass]="type == 'Décollages' ? 'selectedPage' : ''" style="width:fit-content;">
+      Decollages
+    </button>
+    <button id="atterrissageButton" mat-raised-button (click)="toAtterrisages()" [ngClass]="type == 'Atterrissages' ? 'selectedPage' : ''" style="width:fit-content;">
+      Atterrissages
+    </button>
+  </div>
+</mat-toolbar>

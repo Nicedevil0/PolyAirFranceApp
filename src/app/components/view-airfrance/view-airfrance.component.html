@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="sections">
+    <div class="left">
+      <div class="top">
+        <app-filtres (filtresEvent)="onFiltresEvent($event)"></app-filtres>
+      </div>
+      <div class="bottom">
+        <app-liste-vols [vols]="vols" [type]="type" (dispClientsEvent)="dispClients($event)"></app-liste-vols>
+      </div>
+    </div>
+    <div class="right">
+      <app-liste-passagers [passagers]="passagers"></app-liste-passagers>
+    </div>
+  </div>
+</div>

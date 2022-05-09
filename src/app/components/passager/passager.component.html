@@ -1,0 +1,20 @@
+<!-- Affichage d'un passager -->
+<div style="display:flex; justify-content: space-around; margin-top: 20px; align-items: center;"
+    mat-raised-button
+    matTooltip="{{ passager?.email }}"
+    matTooltipPosition="right"
+    matTooltipHideDelay="1000">
+    <div>
+        <img *ngIf="dispPhoto" src="{{ passager?.image }}" width="50px">
+        <img *ngIf="!dispPhoto" src="{{ passager?.image }}" width="50px" style="filter: blur(6px);">
+    </div>
+    <div>
+        {{ passager?.nom }}
+    </div>
+    <div [appClasseVol]="passager?.classeVol">
+        {{ passager?.classeVol }}
+    </div>
+    <div [appClasseVolForBagage]="passager?.classeVol" [appClasseBagage]="passager?.nbBagagesSoute">
+        <mat-icon style="vertical-align:middle">work</mat-icon> x{{ passager?.nbBagagesSoute ?? 0 }}
+    </div>
+</div>

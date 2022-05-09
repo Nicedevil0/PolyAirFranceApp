@@ -1,0 +1,5 @@
+<!-- Affichage de la liste des vols -->
+<h1 *ngIf="!vols?.length" style="text-align: center; line-height: 300px;">Aucun vol à afficher</h1>
+<div *ngIf="vols?.length">
+    <app-vol *ngFor="let vol of vols" [vol]="vol" [type]="type" (click)="dispClients(vol)"></app-vol>
+</div>
